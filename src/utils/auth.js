@@ -11,7 +11,7 @@ export const register = (email, password)=>{
           "password": password
           })
   })
-      .then((res)=>{
+      .checkResponse((res)=>{
           if (res.ok) {
               return res.json();
           }

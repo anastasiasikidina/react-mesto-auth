@@ -1,11 +1,10 @@
 .photo__like-container {
-    /* max-height: 35px; */
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    margin-right: 20px;
-    margin-bottom: 22px;
+    padding: 0 21px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    max-width: 100%;
 }

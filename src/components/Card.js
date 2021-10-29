@@ -41,7 +41,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
         </div>
       <div className="photo__like-container">
         <h2 className="photo__title">{card.name}</h2>
-        <div>
+        <div className="photo__like-button-container">
           <button
             onClick={handleLikeClick}
             type="button"

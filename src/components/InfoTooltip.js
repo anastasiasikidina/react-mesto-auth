@@ -1,5 +1,5 @@
-import FailRegister from "../images/FailRegister.svg";
-import SuccesfulRegister from "../images/SuccesfulRegister.svg";
+import failRegister from "../images/failRegister.svg";
+import succesfulRegister from "../images/succesfulRegister.svg";
 export default function InfoToolTip({ onClose, isOpen, isRegSucces, name }) {
   return (
     <div className={isOpen ? `popup_opened popup` : `popup`}>
@@ -12,7 +12,7 @@ export default function InfoToolTip({ onClose, isOpen, isRegSucces, name }) {
       <div className="popup__content">
       
         <img
-          src={isRegSucces ? SuccesfulRegister : FailRegister}
+          src={isRegSucces ? succesfulRegister : failRegister}
           className="popup__info-icon"
           alt="успех регистрации"
         />

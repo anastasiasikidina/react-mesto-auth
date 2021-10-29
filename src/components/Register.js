@@ -43,13 +43,13 @@ export default function Login({ onSubmit }) {
           type="password"
           name="register-password"
           placeholder="Пароль"
-          id="register-email"
+          id="register-password"
           className="authorization__input authorization__input_password"
         />
         <button type="submit" className="authorization__button">
           Зарегистрироваться
         </button>
-        <Link className="authorization__login-link" to="/sing-in">
+        <Link className="authorization__login-link" to="/sign-in">
           Уже зарегистрированы? Войти
         </Link>
       </form>
