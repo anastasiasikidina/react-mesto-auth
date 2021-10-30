@@ -1,4 +1,5 @@
 export const BASE_URL = 'https://auth.nomoreparties.co';
+
 export const register = (email, password)=>{
   return fetch(`${BASE_URL}/signup`,{
       method: "POST",
@@ -11,13 +12,8 @@ export const register = (email, password)=>{
           "password": password
           })
   })
-      .checkResponse((res)=>{
-          if (res.ok) {
-              return res.json();
-          }
-          return Promise.reject(new Error(`Что-то пошло не так ${res.status}`))
-      })
 }
+
 export const login = (email, password)=>{
   return fetch(`${BASE_URL}/signin`,{
       method: "POST",
@@ -28,13 +24,7 @@ export const login = (email, password)=>{
           "email": email,
           "password": password
            })
-  })
-      .then((res) => {
-          if (res.ok) {
-              return res.json();
-          }
-          return Promise.reject(new Error(`Что-то пошло не так: ${res.status}`))
-      })
+  }).then(_checkResponse)
       .then((data) => {
           if (data.token){
               localStorage.setItem('jwt', data.token);
@@ -43,6 +33,7 @@ export const login = (email, password)=>{
       })
 
 }
+
 export const checkToken  = (jwt)=>{
   return fetch(`${BASE_URL}/users/me`,{
       method: "GET",
@@ -50,11 +41,12 @@ export const checkToken  = (jwt)=>{
           "Content-Type":"application/json",
           "Authorization" : `Bearer ${jwt}`
       },
-  })
-      .then((res) => {
-          if (res.ok) {
-              return res.json();
-          }
-          return Promise.reject(new Error(`Что-то пошло не так ${res.status}`))
-      })
+  }).then(_checkResponse)
 }
+
+function _checkResponse (res) {
+    if (res.ok) { 
+        return res.json() 
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
