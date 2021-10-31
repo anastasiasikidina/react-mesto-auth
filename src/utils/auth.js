@@ -11,7 +11,7 @@ export const register = (email, password)=>{
           "email": email,
           "password": password
           })
-  })
+  }).then(_checkResponse)
 }
 
 export const login = (email, password)=>{
