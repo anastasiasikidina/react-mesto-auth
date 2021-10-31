@@ -9,7 +9,7 @@
     background-color: transparent;
     border: none;
     align-self: flex-end;
-    position: absolute;
+   /* position: absolute;*/
     top: -26px;
     right: -26px;
     cursor: pointer;

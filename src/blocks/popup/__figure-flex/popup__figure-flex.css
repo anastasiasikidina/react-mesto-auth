@@ -1,9 +1,10 @@
 .popup__figure-flex {
-    max-width: 865px;
+   /* max-width: 865px;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 0;
 }
 
 @media (max-width: 768px) {

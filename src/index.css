@@ -61,6 +61,7 @@
 @import url(./blocks/popup/__cross/popup__cross.css);
 @import url(./blocks/popup/__figure-flex/popup__figure-flex.css);
 @import url(./blocks/popup/__container-image/popup__container-image.css);
+@import url(./blocks/popup/__image/popup__image.css);
 
 
 @import url(./blocks/authorization/authorization.css);
